@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajaa Graphics — Premium Creative Studio</title>
+    <meta name="description"
+        content="Sajaa Graphics — Where creativity meets perfection. Premium graphic design, branding, and visual storytelling.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">Sajaa Graphics</div>
+        <div class="loader-bar-bg">
+            <div class="loader-bar" id="loaderBar"></div>
+        </div>
+    </div>
+
+    <!-- EFFECTS -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="noise-overlay"></div>
+    <div class="scan-lines"></div>
+    <div class="vignette"></div>
+    <div class="light-streak"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-spotlight" id="cursorSpotlight"></div>
+    <div class="corner-frame tl"></div>
+    <div class="corner-frame tr"></div>
+    <div class="corner-frame bl"></div>
+    <div class="corner-frame br"></div>
+
+    <!-- GEOMETRIC SHAPES (Mouse Parallax) -->
+    <div class="geo-shapes">
+        <div class="geo-shape" style="top:8%;left:5%;width:180px;height:180px;border-radius:50%;"></div>
+        <div class="geo-shape" style="bottom:15%;right:10%;width:80px;height:80px;transform:rotate(45deg);"></div>
+        <div class="geo-shape" style="top:55%;left:78%;width:120px;height:120px;border-radius:50%;border-style:dashed;">
+        </div>
+        <div class="geo-shape" style="top:22%;right:18%;width:50px;height:50px;"></div>
+        <div class="geo-shape"
+            style="bottom:35%;left:12%;width:70px;height:70px;transform:rotate(30deg);border-style:dotted;"></div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="navbar">
+        <a href="#home" class="nav-logo">
+            <img src="sajaa.png" alt="Sajaa Graphics">
+            <span class="nav-logo-text">Sajaa Graphics</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="text-container" id="textContainer">
+            <div class="main-text" id="mainText">
+                <span class="sajaa-part" id="sajaa-text"></span>
+                <div class="divider"></div>
+                <span class="graphics-part" id="graphics-text"></span>
+            </div>
+        </div>
+        <div class="sub-section" id="subSection">
+            <div class="sub-text">Premium Creative Design Studio</div>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn">Explore our work <span class="arrow">→</span></a>
+                <a href="#contact" class="btn btn-filled">Get in touch</a>
+            </div>
+        </div>
+        <div class="scroll-ind">
+            <div class="scroll-mouse"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="stats-row reveal">
+            <div class="stat">
+                <div class="stat-num" data-count="150">0</div>
+                <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num" data-count="80">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num" data-count="5">0</div>
+                <div class="stat-label">Years Active</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num" data-count="24">0</div>
+                <div class="stat-label">Awards Won</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section" id="services">
+        <div class="section-header reveal">
+            <div class="section-tag">What We Do</div>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-desc">From concept to creation, we deliver premium design solutions that elevate your
+                brand.</p>
+        </div>
+        <div class="services-grid reveal-stagger">
+            <div class="service-card reveal">
+                <span class="service-icon">🎨</span>
+                <h3 class="service-name">Brand Identity</h3>
+                <p class="service-desc">Complete brand ecosystems — logos, color systems, typography, and visual
+                    guidelines that tell your unique story.</p>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">📐</span>
+                <h3 class="service-name">UI/UX Design</h3>
+                <p class="service-desc">Intuitive, beautiful interfaces designed for seamless user experiences across
+                    web and mobile platforms.</p>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">🖼️</span>
+                <h3 class="service-name">Social Media</h3>
+                <p class="service-desc">Scroll-stopping social content, stories, and campaign visuals that drive
+                    engagement and grow your audience.</p>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">🎬</span>
+                <h3 class="service-name">Motion Graphics</h3>
+                <p class="service-desc">Dynamic animations and video content that breathe life into your brand and
+                    captivate every viewer.</p>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">📦</span>
+                <h3 class="service-name">Packaging Design</h3>
+                <p class="service-desc">Product packaging that stands out on shelves and creates memorable unboxing
+                    experiences for customers.</p>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">🌐</span>
+                <h3 class="service-name">Web Design</h3>
+                <p class="service-desc">Stunning, responsive websites that leave lasting impressions and convert
+                    visitors into loyal customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== PORTFOLIO ==================== -->
+    <section class="section" id="portfolio">
+        <div class="section-header reveal">
+            <div class="section-tag">Our Work</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-desc">A showcase of creativity, precision, and passion in every pixel.</p>
+        </div>
+        <div class="portfolio-grid reveal-stagger">
+            <div class="portfolio-item reveal">
+                <div class="portfolio-bg"
+                    style="background: linear-gradient(135deg, #111, #222, #0a0a0a); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:3.5em; filter:grayscale(1) brightness(1.5);">🎨</span>
+                </div>
+                <div class="portfolio-overlay">
+                    <span class="portfolio-cat">Branding</span>
+                    <span class="portfolio-name">Luxe Fashion Co.</span>
+                </div>
+            </div>
+            <div class="portfolio-item reveal">
+                <div class="portfolio-bg"
+                    style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #111); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:3.5em; filter:grayscale(1) brightness(1.5);">📱</span>
+                </div>
+                <div class="portfolio-overlay">
+                    <span class="portfolio-cat">App Design</span>
+                    <span class="portfolio-name">FinTech Dashboard</span>
+                </div>
+            </div>
+            <div class="portfolio-item reveal">
+                <div class="portfolio-bg"
+                    style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a, #222); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:3.5em; filter:grayscale(1) brightness(1.5);">📦</span>
+                </div>
+                <div class="portfolio-overlay">
+                    <span class="portfolio-cat">Packaging</span>
+                    <span class="portfolio-name">Aroma Café Rebrand</span>
+                </div>
+            </div>
+            <div class="portfolio-item reveal">
+                <div class="portfolio-bg"
+                    style="background: linear-gradient(135deg, #111, #0a0a0a, #1a1a1a); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:3.5em; filter:grayscale(1) brightness(1.5);">🌐</span>
+                </div>
+                <div class="portfolio-overlay">
+                    <span class="portfolio-cat">Web Design</span>
+                    <span class="portfolio-name">Tech Startup Landing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+        <div class="section-header reveal">
+            <div class="section-tag">Who We Are</div>
+            <h2 class="section-title">Why Sajaa Graphics?</h2>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <h3>Designs that speak louder than words.</h3>
+                <p>We're a passionate creative studio dedicated to transforming ideas into breathtaking visual
+                    realities. Every project is a canvas, and we make sure it's a masterpiece. Our attention to detail
+                    and creative vision sets us apart.</p>
+                <a href="#contact" class="btn btn-filled">Start a Project <span class="arrow">→</span></a>
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h4>Fast Turnaround</h4>
+                        <p>Quick delivery without compromising quality.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <div class="feature-text">
+                        <h4>Premium Quality</h4>
+                        <p>Pixel-perfect designs crafted with precision.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-text">
+                        <h4>Client-First Approach</h4>
+                        <p>Your vision, our expertise — always collaborative.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-text">
+                        <h4>Unlimited Revisions</h4>
+                        <p>We iterate until you're 100% satisfied.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== TESTIMONIAL ==================== -->
+    <section class="section">
+        <div class="testimonial reveal">
+            <div class="testimonial-quote">
+                Sajaa Graphics transformed our entire brand presence. Their attention to detail and creative vision
+                exceeded every expectation. Truly world-class design work.
+            </div>
+            <div class="testimonial-author">Ahmed R.</div>
+            <div class="testimonial-role">CEO, Creative Ventures</div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== CTA / CONTACT ==================== -->
+    <section class="section" id="contact">
+        <div class="cta-box reveal">
+            <h2 class="cta-title">Ready to create something amazing?</h2>
+            <p class="cta-desc">Let's bring your vision to life. Reach out and start your next project today.</p>
+            <div class="cta-buttons">
+                <a href="https://sites.google.com/view/sajaagraphics2024/home" class="btn btn-filled" target="_blank">
+                    Visit Studio <span class="arrow">→</span>
+                </a>
+                <a href="mailto:sajaagraphics2024@gmail.com" class="btn">
+                    ✉ Email Us
+                </a>
+            </div>
+            <div class="map-wrapper">
+                <div class="map-label">📍 Visit Our Studio</div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3950.2682634716416!2d79.87237518193979!3d6.9404223813165515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTYnMjguNiJOIDc5wrA1MicyNy43IkU!5e1!3m2!1sen!2slk!4v1771245352864!5m2!1sen!2slk"
+                        width="100%" height="300"
+                        style="border:0; border-radius:12px; filter: grayscale(1) invert(1) contrast(1.1) brightness(0.5);"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="sajaa.png" alt="Sajaa Graphics">
+                <span>Sajaa Graphics</span>
+            </div>
+            <div class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 Sajaa Graphics. All rights reserved. Crafted with ♥</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
